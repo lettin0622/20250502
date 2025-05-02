@@ -20,7 +20,8 @@ function draw() {
   for (let x = 0; x < capture.width; x += 20) {
     for (let y = 0; y < capture.height; y += 20) {
       let col = capture.get(x, y); // 取得 capture 對應位置的顏色
-      graphics.fill(col); // 設定方框的顏色
+       let gray = (red(col) + green(col) + blue(col)) / 3; // 計算灰階值
+      graphics.fill(gray); // 設定方框的顏色為灰階值
       graphics.noStroke(); // 移除邊框
       graphics.rect(x + 2.5, y + 2.5, 15, 15); // 繪製方框，偏移 2.5 以對齊單位格
       graphics.fill(0); // 設定圓的顏色為黑色
