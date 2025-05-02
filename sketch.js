@@ -26,13 +26,12 @@ function draw() {
     }
   }
 
-  // 計算影像的水平與垂直居中位置
+  // 計算圖形緩衝區的水平與垂直居中位置
   let x = (width - capture.width) / 2;
   let y = (height - capture.height) / 2;
 
-  // 顯示圖形緩衝區在視訊畫面上方
-  image(graphics, x, y - capture.height - 10, capture.width, capture.height); // 上方顯示緩衝區
-  image(capture, x, y, capture.width, capture.height); // 在畫布中央顯示影像
+  // 置中顯示圖形緩衝區
+  image(graphics, x, y, capture.width, capture.height); // 置中顯示緩衝區
 }
 
 function windowResized() {
